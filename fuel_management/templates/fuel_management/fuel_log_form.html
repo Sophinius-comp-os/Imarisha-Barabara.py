@@ -1,0 +1,29 @@
+<!-- fuel_log_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Add Fuel Log{% endblock %}
+
+{% block content %}
+    <h2>Add Fuel Log</h2>
+    <form method="post" action="{% url 'add_fuel_log' %}">
+        {% csrf_token %}
+        <label for="vehicle">Vehicle:</label>
+        <select name="vehicle" id="vehicle">
+            {% for vehicle in vehicles %}
+                <option value="{{ vehicle.id }}">{{ vehicle.plate_number }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="fuel_station">Fuel Station:</label>
+        <select name="fuel_station" id="fuel_station">
+            {% for station in fuel_stations %}
+                <option value="{{ station.id }}">{{ station.name }}</option>
+            {% endfor %}
+        </select><br>
+
+        <label for="fuel_quantity">Fuel Quantity:</label>
+        <input type="text" name="fuel_quantity" id="fuel_quantity"><br>
+
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

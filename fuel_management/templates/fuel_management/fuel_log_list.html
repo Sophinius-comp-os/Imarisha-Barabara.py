@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Fuel Log List{% endblock %}
+
+{% block header %}Fuel Log List{% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Ward</th>
+                <th>Subcounty</th>
+                <th>Equipment</th>
+                <th>Number Plate</th>
+                <th>Fuel Units</th>
+                <th>Price per Litre</th>
+                <th>Date</th>
+                <!-- Add other fields as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for fuel_log in fuel_logs %}
+                <tr>
+                    <td>{{ fuel_log.ward }}</td>
+                    <td>{{ fuel_log.subcounty }}</td>
+                    <td>{{ fuel_log.equipment }}</td>
+                    <td>{{ fuel_log.number_plate }}</td>
+                    <td>{{ fuel_log.fuel_units }}</td>
+                    <td>{{ fuel_log.price_per_litre }}</td>
+                    <td>{{ fuel_log.date }}</td>
+                    <!-- Add other fields as needed -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

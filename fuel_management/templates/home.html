@@ -1,0 +1,57 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Imarisha Barabara</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        main {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Imarisha Barabara</h1>
+    </header>
+
+    <main>
+        <p>
+            Imarisha Barabara is your go-to platform for managing fuel logs and more.
+            Explore our features and start optimizing your fuel management today!
+        </p>
+        <a href="{% url 'fuel_log_list' %}">View Fuel Logs</a>
+    </main>
+
+    <footer>
+        <p>&copy; {% now "Y" %} Imarisha Barabara</p>
+    </footer>
+</body>
+</html>

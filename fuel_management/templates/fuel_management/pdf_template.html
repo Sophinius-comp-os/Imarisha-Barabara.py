@@ -1,0 +1,32 @@
+<!-- fuel_management/pdf_template.html -->
+<h2>Fuel Log List</h2>
+<table border="1" cellspacing="0" cellpadding="5">
+    <thead>
+        <tr>
+            <th>Ward</th>
+            <th>Subcounty</th>
+            <th>Equipment</th>
+            <th>Number Plate</th>
+            <th>Fuel Units (Litres)</th>
+            <th>Price per Litre</th>
+            <th>Total Amount Spent</th>
+            <th>Date</th>
+            <!-- Add other columns here -->
+        </tr>
+    </thead>
+    <tbody>
+        {% for log in fuel_logs %}
+            <tr>
+                <td>{{ log.ward }}</td>
+                <td>{{ log.subcounty }}</td>
+                <td>{{ log.equipment }}</td>
+                <td>{{ log.number_plate }}</td>
+                <td>{{ log.fuel_units }}</td>
+                <td>{{ log.price_per_litre }}</td>
+                <td>{{ log.total_amount_spent }}</td>
+                <td>{{ log.date }}</td>
+                <!-- Add other columns here -->
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>

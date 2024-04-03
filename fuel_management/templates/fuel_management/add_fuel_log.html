@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Fuel Log{% endblock %}
+
+{% block header %}Add Fuel Log{% endblock %}
+
+{% block content %}
+    <form method="post" action="{% url 'add_fuel_log' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Fuel Log</button>
+    </form>
+{% endblock %}

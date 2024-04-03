@@ -1,0 +1,13 @@
+<!-- vehicle_list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Vehicle List{% endblock %}
+
+{% block content %}
+    <h2>Vehicle List</h2>
+    <ul>
+        {% for vehicle in vehicles %}
+            <li>{{ vehicle.plate_number }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}
